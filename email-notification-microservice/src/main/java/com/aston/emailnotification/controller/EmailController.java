@@ -47,7 +47,7 @@ public class EmailController {
         try {
             emailService.sendSimpleEmail(email, "Информация об успешном удалении аккаунта",
                     "Здравствуйте, " + name + "! Ваш аккаунт был удален.");
-        } catch (MailException e) {
+        } catch (RuntimeException e) {
             log.error("Ошибка при отправке электронного письма: ", e);
             return new ResponseEntity<>("Не удается отправить электронное письмо", HttpStatus.INTERNAL_SERVER_ERROR);
         }
