@@ -1,0 +1,9 @@
+/email-notification-microservice/src/main/resources/static/
+/.idea/
+/email-notification-microservice/logs/2026-01/
+/email-notification-microservice/logs/spring-boot-logger.log
+/email-notification-microservice/logs/spring-boot-logger-log4j2.log
+/email-notification-microservice/target/
+/core/target/
+/.idea/
+/logs/
