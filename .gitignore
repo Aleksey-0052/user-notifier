@@ -7,3 +7,4 @@
 /core/target/
 /.idea/
 /logs/
+/email-notification-microservice/logs/archived/
