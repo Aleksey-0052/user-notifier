@@ -2,8 +2,11 @@
   <dictionary name="project">
     <words>
       <w>acknowlegment</w>
+      <w>circuitbreakers</w>
+      <w>configserver</w>
       <w>consumer'a</w>
       <w>emailnotification</w>
+      <w>eurekaserver</w>
       <w>insync</w>
       <w>jvzi</w>
       <w>lcyk</w>

@@ -18,6 +18,25 @@
           <option value="UserMicroservice" />
           <option value="EmailNotificationMicroservice" />
           <option value="EmailNotificationMicroservice" />
+          <option value="user-notifier" />
+          <option value="user-notifier" />
+          <option value="user-notifier" />
+          <option value="user-notifier" />
+          <option value="user-notifier" />
+          <option value="user-notifier" />
+          <option value="user-notifier" />
+          <option value="UserMicroservice" />
+          <option value="EmailNotificationMicroservice" />
+          <option value="config-server" />
+          <option value="config-server" />
+          <option value="config-server" />
+          <option value="config-server" />
+          <option value="config-server" />
+          <option value="config-server" />
+          <option value="config-server" />
+          <option value="UserMicroservice" />
+          <option value="UserMicroservice" />
+          <option value="UserMicroservice" />
         </list>
       </option>
       <option name="ignoredPackages">
@@ -35,10 +54,48 @@
           <option value="org.bitbucket.b_c:jose4j:0.9.4" />
           <option value="commons-beanutils:commons-beanutils:1.9.4" />
           <option value="org.bitbucket.b_c:jose4j:0.9.4" />
+          <option value="org.bouncycastle:bcprov-jdk15on:1.69" />
+          <option value="org.eclipse.jgit:org.eclipse.jgit:6.4.0.202211300538-r" />
+          <option value="org.apache.sshd:sshd-osgi:2.9.2" />
+          <option value="org.apache.sshd:sshd-sftp:2.9.2" />
+          <option value="org.apache.sshd:sshd-core:2.9.2" />
+          <option value="org.apache.sshd:sshd-common:2.9.2" />
+          <option value="net.i2p.crypto:eddsa:0.3.0" />
+          <option value="org.springframework.cloud:spring-cloud-config-server:4.0.0" />
+          <option value="org.springframework.cloud:spring-cloud-config-server:4.0.0" />
+          <option value="org.bouncycastle:bcprov-jdk15on:1.69" />
+          <option value="org.eclipse.jgit:org.eclipse.jgit:6.4.0.202211300538-r" />
+          <option value="org.apache.sshd:sshd-osgi:2.9.2" />
+          <option value="org.apache.sshd:sshd-sftp:2.9.2" />
+          <option value="org.apache.sshd:sshd-core:2.9.2" />
+          <option value="org.apache.sshd:sshd-common:2.9.2" />
+          <option value="net.i2p.crypto:eddsa:0.3.0" />
+          <option value="org.apache.httpcomponents:httpclient:4.5.3" />
+          <option value="commons-configuration:commons-configuration:1.10" />
+          <option value="commons-lang:commons-lang:2.6" />
         </list>
       </option>
       <option name="ignoredReasons">
         <list>
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
+          <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />
           <option value="Not exploitable" />

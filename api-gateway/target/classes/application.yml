@@ -1,0 +1,54 @@
+server:
+  port: 8080 # Порт API Gateway
+
+spring:
+  application:
+    name: api-gateway # Имя сервиса в Eureka
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # Включаем интеграцию с Eureka
+
+      routes:
+        - id: user-microservice
+          uri: lb://user-microservice
+          predicates:
+            - Path=/users/**
+#          filters:
+#            - name: RequestRateLimiter
+#              args:
+#                redis-rate-limiter.replenishRate: 10   # Запросов в секунду
+#                redis-rate-limiter.burstCapacity: 20   # Максимальное количество запросов в "очереди".
+# При включенных фильтрах выбрасывается исключение Forbidden
+        - id: email-microservice
+          uri: lb://email-microservice
+          predicates:
+            - Path=/email/**
+# Эти маршруты говорят Gateway направлять:
+# - Все запросы, начинающиеся с /users/, к сервису user-microservice.
+# - Все запросы, начинающиеся с /email/, к сервису email-microservice.
+# lb:// — указание Spring использовать Ribbon (Load Balancer - балансировка нагрузки) для маршрутизации запросов.
+# filters - защита сервисов от перегрузки, можно настроить ограничение скорости запросов (rate-limiting):
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # Ссылка на ваш Eureka Server
+    fetch-registry: true
+    register-with-eureka: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+# Использование Spring Boot Actuator для отладки интеграции.
+# http://localhost:8080/actuator/gateway/routes - вывод списка всех маршрутов в API Gateway, которые обнаружены
+# через Eureka.
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+    org.springframework.cloud.gateway: DEBUG

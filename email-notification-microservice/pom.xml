@@ -37,6 +37,20 @@
         </dependency>
 
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
+        </dependency>
+
+        <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
@@ -118,7 +132,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>4.0.0</version>
                 <configuration>
-                    <mainClass>com.aston.emailnotification.EmailNotificationMicroserviceApplication</mainClass>
+                    <mainClass>com.aston.email_notification_microservice.EmailNotificationMicroserviceApplication</mainClass>
                 </configuration>
             </plugin>
             <plugin>

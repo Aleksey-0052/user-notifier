@@ -1,0 +1,11 @@
+server:
+  port: 8761 # Стандартный порт для Eureka Server
+spring:
+  application:
+    name: eureka-server
+eureka:
+  client:
+    register-with-eureka: false # Сам сервер не будет регистрироваться в других серверах
+    fetch-registry: false       # Не пытаемся скачать реестр
+  server:
+    enable-self-preservation: false # Отключаем режим самосохранения для простоты
