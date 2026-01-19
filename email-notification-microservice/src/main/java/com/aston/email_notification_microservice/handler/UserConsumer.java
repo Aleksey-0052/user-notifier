@@ -9,7 +9,7 @@ import org.springframework.kafka.annotation.KafkaHandler;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-@Profile("!api")
+@Profile({"kafka", "local"})
 @Slf4j
 @AllArgsConstructor
 @Component

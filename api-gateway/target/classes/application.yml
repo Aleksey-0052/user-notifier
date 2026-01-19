@@ -15,6 +15,10 @@ spring:
           uri: lb://user-microservice
           predicates:
             - Path=/users/**
+#        - id: user-microservice-2
+#          uri: lb://user-microservice-2
+#          predicates:
+#            - Path=/api/users/**
 #          filters:
 #            - name: RequestRateLimiter
 #              args:
@@ -27,6 +31,7 @@ spring:
             - Path=/email/**
 # Эти маршруты говорят Gateway направлять:
 # - Все запросы, начинающиеся с /users/, к сервису user-microservice.
+# - Все запросы, начинающиеся с /api/users/, к сервису user-microservice-2.
 # - Все запросы, начинающиеся с /email/, к сервису email-microservice.
 # lb:// — указание Spring использовать Ribbon (Load Balancer - балансировка нагрузки) для маршрутизации запросов.
 # filters - защита сервисов от перегрузки, можно настроить ограничение скорости запросов (rate-limiting):

@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Configuration
-@Profile("!api")
+@Profile({"kafka", "local"})
 public class KafkaConfig {
 
     @Autowired

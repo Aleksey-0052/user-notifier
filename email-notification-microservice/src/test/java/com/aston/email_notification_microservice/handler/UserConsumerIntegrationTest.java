@@ -18,10 +18,12 @@ import java.util.concurrent.ExecutionException;
 
 import static org.mockito.Mockito.*;
 
-@ActiveProfiles("test")
+@ActiveProfiles({"kafka", "test"})
 @EmbeddedKafka
 @SpringBootTest(properties = "spring.kafka.consumer.bootstrap-servers=${spring.embedded.kafka.brokers}")
 class UserConsumerIntegrationTest {
+
+    // Перед запуском тестов необходимо запустить Config Server, Eureka Server, Api Gateway
 
     @MockitoBean
     private EmailServiceImpl emailService;

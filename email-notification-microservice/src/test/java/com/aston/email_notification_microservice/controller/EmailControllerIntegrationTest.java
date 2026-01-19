@@ -23,6 +23,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ActiveProfiles("api")
 class EmailControllerIntegrationTest {
 
+    // Перед запуском тестов необходимо запустить Config Server, Eureka Server, Api Gateway
+
     @Autowired
     private MockMvc mockMvc;
 
@@ -40,7 +42,7 @@ class EmailControllerIntegrationTest {
         String message = "Здравствуйте, " + name + "! Ваш аккаунт на сайте был успешно создан.";
 
         mockMvc.perform(MockMvcRequestBuilders
-                        .get("/email/simple-email/type-operation-create")
+                        .get("http://localhost:8080/email/simple-email/type-operation-create")
                         .param("user-email", email)
                         .param("user-name", name)
                         .contentType(MediaType.APPLICATION_JSON))
