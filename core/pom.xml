@@ -5,12 +5,14 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>com.aston</groupId>
-        <artifactId>user-notifier</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.5.9</version>
     </parent>
 
+    <groupId>com.aston</groupId>
     <artifactId>core</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
     <url/>
     <licenses>

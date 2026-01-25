@@ -38,12 +38,14 @@ public class KafkaConfig {
         config.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG,
                 environment.getProperty("spring.kafka.consumer.bootstrap-servers"));
         config.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class);
+        // Данное свойство не получаем из файла .properties
         config.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, ErrorHandlingDeserializer.class);
         // Если consumer не сможет десериализовать некорректное сообщение, то он циклически будет выбрасывать исключения,
         // и работа consumer'a остановится. ErrorHandlingDeserializer.class - это wrapper для JsonDeserializer.
         // В случае возникновения ошибки, он переведет метку в партиции на следующий offset, и consumer продолжит работать
         // дальше, пропустив некорректное сообщение
         config.put(ErrorHandlingDeserializer.VALUE_DESERIALIZER_CLASS, JsonDeserializer.class);
+        // Данное свойство не получаем из файла .properties
         config.put(ConsumerConfig.GROUP_ID_CONFIG, environment.getProperty("spring.kafka.consumer.group-id"));
         config.put(JsonDeserializer.TRUSTED_PACKAGES,
                 environment.getProperty("spring.kafka.consumer.properties.spring.json.trusted.packages"));
@@ -66,7 +68,7 @@ public class KafkaConfig {
         errorHandler.addNotRetryableExceptions(NonRetryableException.class);
         // При выбросе исключений этого типа сообщения будут сразу направляться в специальный топик
         errorHandler.addRetryableExceptions(RetryableException.class);
-        // При выбросе исключения этого типа сообщение будет три раза с интервалом 3 секунды заново перенаправляться
+        // При выбросе исключения этого типа сообщение будет 3 раза с интервалом 3 секунды заново перенаправляться
         // в consumer, но после истечения трех попыток тоже будет направлено в специальный топик
 
         ConcurrentKafkaListenerContainerFactory<String, Object> factory = new ConcurrentKafkaListenerContainerFactory<>();
@@ -82,6 +84,7 @@ public class KafkaConfig {
     @Bean
     KafkaTemplate<String, Object> kafkaTemplate(ProducerFactory<String, Object> producerFactory) {
         return new KafkaTemplate<>(producerFactory);
+        // Указываем Object, так как не знаем, какого типа сообщение пришло
 
     }
 

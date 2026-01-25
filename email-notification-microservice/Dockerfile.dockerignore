@@ -1,0 +1,4 @@
+logs
+# Исключение подкаталога logs в корневом каталоге
+src/main/resources/static
+# Исключение каталога static

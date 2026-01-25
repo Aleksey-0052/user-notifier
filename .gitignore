@@ -8,3 +8,9 @@
 /.idea/
 /logs/
 /email-notification-microservice/logs/archived/
+/api-gateway/target/
+/config-server/target/
+/.idea/
+/.idea/
+/eureka-server/target/
+/email-notification-microservice/logs/

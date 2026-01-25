@@ -1,0 +1,47 @@
+services:
+
+  user-microservice:
+    extends:
+      service: user-microservice
+      file: services.yml
+    environment:
+      - SPRING_PROFILES_ACTIVE=api
+
+  email-notification-microservice:
+    extends:
+      service: email-notification-microservice
+      file: services.yml
+    environment:
+      - SPRING_PROFILES_ACTIVE=api
+
+  core:
+    extends:
+      service: core
+      file: services.yml
+
+  config-server:
+    extends:
+      service: config-server
+      file: services.yml
+
+  eureka-server:
+    extends:
+      service: eureka-server
+      file: services.yml
+
+  api-gateway:
+    extends:
+      service: api-gateway
+      file: services.yml
+
+  db:
+    extends:
+      service: db
+      file: services.yml
+
+volumes:
+  db_data:
+
+
+# Команда для запуска контейнера с помощью файла docker-compose с определенным профилем:
+# docker-compose -f docker-compose-api.yml up

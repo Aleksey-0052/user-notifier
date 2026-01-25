@@ -1,0 +1,103 @@
+services:
+
+  user-microservice:
+    build:
+      context: ./user-microservice
+      dockerfile: Dockerfile
+    image: user-microservice-image
+    container_name: user-microservice
+    #    links:
+    #    networks:
+    environment:
+      - DB_URL=jdbc:postgresql://db:5432/users
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=postgres
+      - SPRING_LIQUIBASE_ENABLED=true
+    restart: always
+    ports:
+      - "8080:8080"
+      - "8888:8888"
+      - "8761:8761"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    depends_on:
+      - core
+      - db
+      - config-server
+      - eureka-server
+
+  email-notification-microservice:
+    build:
+      context: ./email-notification-microservice
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - "8080:8080"
+      - "8888:8888"
+      - "8761:8761"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    depends_on:
+      - core
+      - config-server
+      - eureka-server
+
+  core:
+    build:
+      context: ./core
+      dockerfile: Dockerfile
+    image: core-image
+    container_name: core
+
+  config-server:
+    build:
+      context: ./config-server
+      dockerfile: Dockerfile
+    image: server-config-image
+    container_name: server-config
+    ports:
+      - "8888:8888"
+
+  eureka-server:
+    build:
+      context: ./eureka-server
+      dockerfile: Dockerfile
+    image: eureka-server-image
+    container_name: eureka-server
+    ports:
+      - "8761:8761"
+
+  api-gateway:
+    build:
+      context: ./api-gateway
+      dockerfile: Dockerfile
+    image: api-gateway-image
+    container_name: api-gateway
+    restart: always
+    ports:
+      - "8080:8080"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+
+  db:
+    image: postgres:16.3
+    container_name: db
+    environment:
+      - POSTGRES_DB=users
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5435:5432"
+    restart: always
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+
+
+

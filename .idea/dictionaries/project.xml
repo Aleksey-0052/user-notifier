@@ -4,10 +4,13 @@
       <w>acknowlegment</w>
       <w>circuitbreakers</w>
       <w>configserver</w>
+      <w>confluentinc</w>
       <w>consumer'a</w>
       <w>emailnotification</w>
       <w>eurekaserver</w>
+      <w>healthcheck</w>
       <w>insync</w>
+      <w>isready</w>
       <w>jvzi</w>
       <w>lcyk</w>
       <w>lmwj</w>
@@ -17,6 +20,9 @@
       <w>исключится</w>
       <w>мокаем</w>
       <w>переиспользоваться</w>
+      <w>прослушивателей</w>
+      <w>прослушиватель</w>
+      <w>прослушивателя</w>
     </words>
   </dictionary>
 </component>
